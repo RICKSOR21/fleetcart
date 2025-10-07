@@ -1,0 +1,125 @@
+.alert {
+    font-size: 16px;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    margin: 0 0 0 15px;
+    padding: 20px 20px 20px 20px;
+    align-items: center;
+    border: 1px solid #00e57b;
+    color: var(--color-white);
+    border-radius: var(--radius-default);
+    z-index: 10;
+    padding-right: 20px;
+
+    > svg {
+        margin-right: 16px;
+        min-width: 24px;
+    }
+
+    .close {
+        height: 24px;
+        min-width: 24px;
+        right: 20px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: unset;
+        background: transparent;
+        border: none;
+        opacity: 1;
+        border-radius: 5px;
+        transition: var(--transition-150);
+        box-sizing: border-box;
+        margin-left: 16px;
+
+        svg {
+            height: 10px;
+            width: 10px;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+
+        > i {
+            color: var(--color-white);
+        }
+    }
+}
+
+.alert-success {
+    background: #00bc65;
+    border-color: #00e57b;
+
+    svg {
+        rect {
+            fill: #009e55;
+        }
+    }
+
+    .close {
+        &:hover {
+            background: #009e55;
+        }
+    }
+}
+
+.alert-danger {
+    background: #ff5748;
+    border-color: #ffa199;
+
+    svg {
+        rect {
+            fill: #cc1100;
+        }
+    }
+
+    .close {
+        &:hover {
+            background: #cc1100;
+        }
+    }
+}
+
+.alert-info {
+    background: #0068e0;
+    border-color: #479cff;
+
+    svg {
+        rect {
+            fill: #005ac2;
+        }
+    }
+
+    .close {
+        &:hover {
+            background: #005ac2;
+        }
+    }
+}
+
+.alert-warning {
+    background: #ffad00;
+    border-color: #ffce66;
+
+    svg {
+        rect {
+            fill: #e59b00;
+        }
+    }
+
+    .close {
+        &:hover {
+            background: #e59b00;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .alert {
+        bottom: 90px;
+    }
+}

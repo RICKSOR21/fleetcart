@@ -1,0 +1,13 @@
+@import "sections/_order-details-top";
+@import "sections/_order-details-middle";
+@import "sections/_order-details-bottom";
+
+.order-details-wrap {
+    margin-top: 50px;
+
+    .section-title {
+        margin-bottom: 34px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid var(--border-color-lite);
+    }
+}

@@ -1,0 +1,28 @@
+/*rtl:begin:ignore*/
+@import "nouislider/dist/nouislider";
+/*rtl:end:ignore*/
+@import "sections/_product-search-left";
+@import "sections/_product-search-right";
+@import "sections/_category-menu";
+@import "sections/_filter-section";
+@import "sections/_search-result";
+@import "sections/_grid-view-product"; 
+@import "sections/_list-view-product";
+
+.product-search-wrap {
+    margin-top: 50px;
+
+    .product-search {
+        display: flex; 
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .product-search-wrap {
+        margin-top: 24px;
+    }
+
+    .product-search {
+        flex-direction: column-reverse;
+    }
+}

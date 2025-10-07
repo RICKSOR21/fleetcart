@@ -1,0 +1,141 @@
+.three-column-full-width-banner {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.banner-wrap {
+    margin-top: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.m-t-0 {
+        margin-top: 0;
+    }
+
+    &.three-column-full-width-banner,
+    &.one-column-banner {
+        margin-top: 50px;
+    }
+
+    &.three-column-banner {
+        .banner {
+            background: rgba(0,0,0,.04);
+            padding-bottom: 40%;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+
+    &.one-column-banner {
+        .banner {
+            background: rgba(0,0,0,.04);
+            padding-bottom: 22%;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+
+    &.two-column-banner {
+        .banner {
+            background: rgba(0,0,0,.04);
+            padding-bottom: 31%;
+            
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .three-column-full-width-banner {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .three-column-full-width-banner {
+        .row {
+            > div {
+                &:first-child {
+                    .banner {
+                        margin-top: 0;
+                    }
+                }
+
+                .banner {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .two-column-banner {
+        .row {
+            > .col-md-9 {
+                &:last-child {
+                    .banner {
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .three-column-banner {
+        .row {
+            > .col-md-6 {
+                &:first-child {
+                    .banner {
+                        margin-top: 0;
+                    }
+                }
+
+                .banner {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes effect-height {
+    0% {
+        height: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes effect-width {
+    0% {
+        width: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}

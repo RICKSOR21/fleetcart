@@ -1,0 +1,110 @@
+.grid-view-products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -6px -6px 0;
+
+    .grid-view-products-item {
+        display: flex;
+        padding: 6px;
+    }
+
+    .product-card {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.grid-view-products {
+    .grid-view-products-item {
+        width: 16.66%;
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    .grid-view-products {
+        .grid-view-products-item {
+            width: 20%;
+        }
+
+        .grid-view-product-skeleton {
+            &:nth-child(10) ~ .grid-view-product-skeleton {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .grid-view-products {
+        .grid-view-products-item {
+            width: 25%;
+        }
+
+        .grid-view-product-skeleton {
+            &:nth-child(8) ~ .grid-view-product-skeleton {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .grid-view-products {
+        .grid-view-products-item {
+            width: 33.33%;
+        }
+
+        .grid-view-product-skeleton {
+            &:nth-child(6) ~ .grid-view-product-skeleton {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .grid-view-products {
+        .grid-view-products-item {
+            width: 25%;
+        }
+
+        .grid-view-product-skeleton {
+            display: flex !important;
+        }
+
+        .grid-view-product-skeleton {
+            &:nth-child(8) ~ .grid-view-product-skeleton {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .grid-view-products {
+        .grid-view-products-item {
+            width: 33.33%;
+        }
+
+        .grid-view-product-skeleton {
+            &:nth-child(6) ~ .grid-view-product-skeleton {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid-view-products {
+        .grid-view-products-item {
+            width: 50%;
+        }
+
+        .grid-view-product-skeleton {
+            &:nth-child(4) ~ .grid-view-product-skeleton {
+                display: none !important;
+            }
+        }
+    }
+}
+

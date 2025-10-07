@@ -1,0 +1,46 @@
+.landscape-products-wrap {
+    margin-top: 45px;
+
+    .landscape-products-inner {
+        overflow: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-bottom: -15px;
+    }
+
+    .landscape-products {
+        overflow: unset;
+        margin-left: -5px;
+        margin-right: -5px;
+        padding-bottom: 15px;
+
+        .product-card {
+            min-height: 240px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            &::after {
+                transform: translateY(-1px);
+            }
+        }
+
+        .swiper-pagination {
+            display: none;
+        }
+    }
+
+    .products-header {
+        border-bottom: 1px solid var(--border-color-lite);
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        padding-bottom: 14px;
+    }
+}

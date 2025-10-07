@@ -1,0 +1,142 @@
+.bottom-navigation-wrap {
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .bottom-navigation-wrap {
+        position: fixed;
+        display: block;
+        left: 0;
+        bottom: 0;
+        background: var(--color-white);
+        width: 100%;
+        min-width: 320px;
+        z-index: 7;
+        border-top: 1px solid #e2e8f0;
+
+        .bottom-navigation-items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 350px;
+            max-width: 100%;
+            margin: 0 auto;
+            list-style: none;
+            padding: 12px 0px 10px;
+
+            li {
+                width: 20%;
+                flex: 0 0 20%;
+                display: flex;
+                justify-content: center;
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 0 5px;
+                    position: relative;
+                    text-decoration: none;
+
+                    .svg-stroke-color path {
+                        stroke: #191919;
+                    }
+
+                    svg {
+                        width: 22px;
+                        height: 22px;
+                    }
+
+                    &.active {
+                        &.compare {
+                            svg {
+                                path {
+                                    stroke: var(--color-primary);
+                                    fill: none;
+                                }
+                            }
+                        }
+
+                        svg {
+                            path {
+                                fill: var(--color-primary);
+                            }
+                        }
+                    }
+
+                    .cart-fill-color {
+                        stroke: var(--color-primary);
+                    }
+
+                    span:not(.count) {
+                        font-size: 10.5px;
+                        font-style: normal;
+                        font-weight: var(--font-normal);
+                        line-height: 140%;
+                        text-align: center;
+                        color: var(--color-black-20);
+                        padding-top: 2px;
+                        transition: 0.2s ease-in-out;
+                        min-width: 50px;
+                        max-width: 65px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        display: inline-block;
+                        text-overflow: ellipsis;
+                    }
+
+                    &.active {
+                        span:not(.count) {
+                            color: var(--color-primary);
+                        }
+
+                        &svg {
+                            fill: var(--color-primary);
+                        }
+                    }
+
+                    .count {
+                        position: absolute;
+                        font-size: 9px;
+                        line-height: 14px;
+                        top: -2px;
+                        right: 12px;
+                        height: 14px;
+                        width: 14px;
+                        color: var(--color-white);
+                        background: var(--color-red);
+                        text-align: center;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                .bottom-navigation-cart {
+                    svg {
+                        height: 22px;
+                        width: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .bottom-navigation-wrap {
+        .bottom-navigation-items {
+            li {
+                a {
+                    min-width: 50px;
+                    max-width: 50px;
+
+                    .count {
+                        right: 7px;
+                    }
+                }
+            }
+        }
+    }
+}

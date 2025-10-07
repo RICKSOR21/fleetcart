@@ -1,0 +1,33 @@
+{
+    "name": "fleetcart/core",
+    "description": "The FleetCart Core Module.",
+    "authors": [
+        {
+            "name": "Envay Soft",
+            "email": "envaysoft@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0",
+        "algolia/algoliasearch-client-php": "^4.0",
+        "laravel/scout": "^10.0",
+        "league/flysystem-aws-s3-v3": "^3.12.2",
+        "mcamara/laravel-localization": "^2.3",
+        "meilisearch/meilisearch-php": "^1.12.0",
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

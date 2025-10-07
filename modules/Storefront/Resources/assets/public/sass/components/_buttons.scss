@@ -1,0 +1,116 @@
+.btn {
+    font-family: var(--base-font-family);
+    font-size: 15px;
+    line-height: 26px;
+    position: relative;
+    color: var(--color-black);
+    padding: 7px 24px;
+    border: none;
+    border-radius: var(--radius-default);
+    transition: var(--transition-150);
+
+    &:focus {
+        box-shadow: none !important;
+        outline: 0;
+    }
+}
+
+.btn-primary {
+    font-weight: var(--font-medium);
+    color: var(--color-white);
+    background: var(--color-primary);
+
+    &:focus {
+        background: var(--color-primary);
+    }
+
+    &:active,
+    &:hover,
+    &:active:focus {
+        background: var(--color-primary-hover);
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background: var(--color-primary-hover);
+    }
+
+    &:disabled,
+    &.disabled,
+    &[disabled] {
+        background: var(--color-primary);
+
+        &:active,
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            background: var(--color-primary);
+        }
+    }
+}
+
+.btn-default {
+    font-weight: var(--font-medium);
+    padding: 6px 24px;
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    font-size: 14px;
+
+    &:active,
+    &:hover,
+    &:active:focus {
+        color: var(--color-white);
+
+        background: var(--color-primary);
+    }
+
+    &.disabled,
+    &[disabled] {
+        &:active,
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            color: var(--color-black);
+            background: transparent !important;
+
+            &.btn-loading {
+                &:after {
+                    border-color: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    &.btn-loading {
+        &:after {
+            border-color: var(--color-primary);
+        }
+
+        &:active,
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            &:after {
+                border-color: var(--color-white);
+            }
+        }
+    }
+}
+
+.btn-lg {
+    margin-top: 5px;
+    padding: 7px 30px;
+    font-size: 14px;
+}
+
+.btn-remove {
+    font-size: 15px;
+    color: var(--color-black);
+    background: transparent;
+    border: none;
+    transition: var(--transition-150);
+
+    &:hover {
+        color: var(--color-primary);
+    }
+}

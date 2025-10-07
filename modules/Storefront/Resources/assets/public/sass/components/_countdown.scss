@@ -1,0 +1,44 @@
+.countdown {
+    border: none;
+    background: transparent;
+
+    .countdown-row {
+        display: flex;
+        padding: 0;
+        font-weight: var(--font-medium);
+        justify-content: center;
+        align-items: center;
+        color: var(--color-gray);
+    }
+
+    .countdown-show4 {
+        .countdown-section {
+            width: auto;
+        }
+    }
+
+    .countdown-section {
+        position: relative;
+        float: none;
+    }
+
+    .countdown-amount {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: var(--font-normal);
+        display: flex;
+        margin: 0 auto 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .countdown-period {
+        position: absolute;
+        font-size: 12px;
+        line-height: 22px;
+        left: 50%;
+        bottom: 0;
+        color: var(--color-gray);
+        transform: translateX(-50%);
+    }
+}

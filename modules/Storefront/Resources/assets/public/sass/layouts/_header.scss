@@ -1,0 +1,22 @@
+@import "header/_header-left";
+@import "header/_header-search";
+@import "header/_searched-keywords";
+@import "header/_search-suggestion";
+@import "header/_header-right";
+@import "header/_sticky-header";
+
+.header-wrap {
+    position: relative;
+    z-index: 12;
+}
+
+.header-wrap-inner {
+    padding: 22px 0;
+}
+
+@media screen and (max-width: 991px) {
+    .header-wrap-inner {
+        padding: 5px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+}

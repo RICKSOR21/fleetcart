@@ -1,0 +1,54 @@
+/*rtl:begin:ignore*/
+@import "swiper/scss/pagination";
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+/*rtl:end:ignore*/
+
+.swiper-button-prev,
+.swiper-button-next {
+    &.swiper-button-disabled {
+        pointer-events: auto;
+    }
+
+    &::selection {
+        background: transparent;
+    }
+}
+
+.swiper:not(.swiper-initialized) {
+    .swiper-pagination,
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}
+
+.swiper {
+    .swiper-wrapper {
+        .swiper-slide {
+            height: auto;
+        }
+    }
+}
+
+.swiper-pagination {
+    bottom: 0 !important;
+    position: relative;
+    padding-top: 20px;
+    left: auto !important;
+    transform: none !important;
+    right: auto;
+    margin: auto;
+
+    .swiper-pagination-bullet {
+        height: 8px;
+        width: 8px;
+        border-radius: 4px;
+        background: var(--color-primary-alpha-30);
+        opacity: 1;
+
+        &.swiper-pagination-bullet-active {
+            background: var(--color-primary);
+        }
+    }
+}

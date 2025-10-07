@@ -1,0 +1,86 @@
+# ==============================
+# PHP Settings (if running as Apache module)
+# ==============================
+<IfModule mod_php.c>
+    php_value max_input_vars 50000
+    php_value post_max_size 200M
+    php_value upload_max_filesize 150M
+</IfModule>
+
+# ==============================
+# Clean URL Handling (Rewriting)
+# ==============================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    # Remove trailing slashes from non-directories
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Route non-files and non-directories to index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Preserve Authorization header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+# ==============================
+# Browser Caching for Static Files
+# ==============================
+<IfModule mod_headers.c>
+    Header always set Connection keep-alive
+
+    # Fonts and media – 4 months
+    <FilesMatch "\.(ico|ttf|woff|woff2|eot|otf|pdf|webm|mp\d+)$">
+        Header set Cache-Control "max-age=10368000, public"
+    </FilesMatch>
+
+    # Images – 4 months
+    <FilesMatch "\.(gif|jpe?g|png|svg|webp)$">
+        Header set Cache-Control "max-age=10368000, public"
+    </FilesMatch>
+
+    # CSS and JS – 1 year
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>
+
+# ==============================
+# No Cache for Dynamic Content (HTML, PHP, XML)
+# ==============================
+<IfModule mod_headers.c>
+    <FilesMatch "\.(x?html?|xml|php)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# ==============================
+# Gzip Compression
+# ==============================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE application/font-woff application/font-woff2
+
+    <IfModule mod_setenvif.c>
+        BrowserMatch ^Mozilla/4 gzip-only-text/html
+        BrowserMatch ^Mozilla/4\.0[678] no-gzip
+        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    </IfModule>
+
+    <IfModule mod_headers.c>
+        Header append Vary Accept-Encoding
+    </IfModule>
+</IfModule>

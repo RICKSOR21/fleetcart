@@ -1,0 +1,60 @@
+.my-wishlist-table {
+    margin-bottom: 10px;
+
+    tbody {
+        td {
+            padding: 7px 25px;
+
+            &:nth-child(5) {
+                min-width: 160px;
+            }
+
+            .btn.btn-delete {
+                margin-left: 8px;
+
+                &:focus,
+                &:hover {
+                    border: 1px solid rgb(255, 87, 72, 0.15);
+                    background: rgb(255, 87, 72, 0.1) !important;
+
+                    > i {
+                        color: var(--color-red);
+                    }
+
+                    svg {
+                        path {
+                            stroke: var(--color-red);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-image {
+        height: 50px;
+        width: 55px;
+        border-radius: var(--radius-default);
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+
+        .image-placeholder {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .product-name {
+        display: inline-block;
+        min-width: 220px;
+        color: var(--color-black);
+        text-decoration-line: underline;
+        text-decoration-color: transparent;
+        transition: var(--transition-150);
+        font-weight: var(--font-medium);
+
+        &:hover {
+            text-decoration-color: var(--color-black);
+        }
+    }
+}

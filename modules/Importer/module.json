@@ -1,0 +1,6 @@
+{
+    "name": "Importer",
+    "alias": "importer",
+    "description": "The FleetCart Importer Module.",
+    "priority": 100
+}

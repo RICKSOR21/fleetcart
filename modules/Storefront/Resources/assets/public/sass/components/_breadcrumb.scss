@@ -1,0 +1,99 @@
+.breadcrumb {
+    margin: 23px 0 0;
+    padding: 0;
+    background: var(--color-white);
+
+    ul {
+        margin-left: -11px;
+
+        > li {
+            font-size: 14px;
+            line-height: 22.4px;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+
+            &:after {
+                position: absolute;
+                content: "\f105";
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+                font-size: 12px;
+                right: -7px;
+                top: 1px;
+                color: var(--color-black);
+            }
+
+            &:last-child {
+                &:after {
+                    content: "";
+                }
+            }
+
+            &.active {
+                color: var(--color-gray);
+
+                &:after {
+                    color: var(--color-gray);
+                }
+            }
+
+            > a {
+                color: var(--color-black);
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+}
+
+.rtl {
+    .breadcrumb {
+        ul {
+            > li {
+                &::after {
+                    transform: rotate(180deg);
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .breadcrumb {
+        ul {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            > li {
+                white-space: nowrap;
+            }
+
+            &::-webkit-scrollbar {
+                width: 8px;
+                height: 2px;
+            }
+
+            &::-webkit-scrollbar-track,
+            &::-webkit-scrollbar-track-piece {
+                background: var(--color-gray-lite);
+                border-radius: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb,
+            &::-webkit-scrollbar-thumb:vertical {
+                border-radius: 5px;
+                background: var(--color-gray-lite-10);
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background: var(--color-gray-dark);
+                }
+            }
+        }
+    }
+}

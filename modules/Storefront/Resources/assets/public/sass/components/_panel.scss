@@ -1,0 +1,32 @@
+.panel {
+    margin-bottom: 50px;
+    border-radius: var(--radius-default);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .panel-header {
+        display: flex;
+        padding: 15px 25px;
+        background: var(--color-white-lite);
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid var(--color-gray-lite);
+        border-radius: var(--radius-default) var(--radius-default) 0 0;
+
+        > a {
+            color: var(--color-gray-dark);
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    .panel-body {
+        border: 1px solid var(--color-gray-lite);
+        border-top: none;
+        border-radius: 0 0 var(--radius-default) var(--radius-default);
+    }
+}

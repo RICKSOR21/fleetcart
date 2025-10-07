@@ -1,0 +1,129 @@
+.product-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    > img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        max-height: 100%;
+        max-width: 100%;
+        transform: translate(-50%, -50%);
+        transition: var(--transition-200);
+    }
+}
+
+.product-badge {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+    .badge {
+        font-size: 12px;
+        font-weight: var(--font-medium);
+        width: auto;
+        min-width: 0;
+        display: inline-block;
+        margin: 0 auto 5px 0;
+        padding: 5px 9px;
+        text-align: left;
+        border-radius: 5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.badge {
+            color: var(--color-white);
+        }
+
+        &.badge-success {
+            background: var(--color-green);
+        }
+
+        &.badge-primary {
+            background: var(--color-primary);
+        }
+
+        &.badge-info {
+            background: var(--color-info);
+        }
+
+        &.badge-warning {
+            background: var(--color-yellow);
+        }
+
+        &.badge-danger {
+            background: var(--color-red);
+        }
+    }
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: var(--font-medium);
+    line-height: 24px;
+    display: flex;
+
+    color: var(--color-primary);
+
+    .special-price {
+        margin-right: 8px;
+    }
+
+    .previous-price {
+        position: relative;
+        font-size: 11px;
+        font-weight: var(--font-normal);
+        color: var(--color-gray);
+        text-decoration: line-through;
+    }
+}
+
+.product-rating {
+    display: inline-flex;
+    align-items: center;
+
+    .back-stars {
+        position: relative;
+        display: flex;
+
+        > i {
+            margin-right: 1px;
+            color: var(--color-gray-dark-lite);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .front-stars {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        color: #ff9d2e;
+        overflow: hidden;
+
+        > i {
+            margin-right: 1px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .rating-count {
+        font-size: 11px;
+        line-height: 12px;
+        margin-left: 5px;
+        color: var(--color-gray);
+    }
+}

@@ -1,0 +1,221 @@
+.newsletter-wrap {
+    .modal-dialog {
+        width: 716px;
+        max-width: calc(100% - 30px);
+
+        .modal-content {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+    }
+}
+
+.newsletter-inner {
+    position: relative;
+    display: flex;
+    border-radius: var(--radius-default);
+    overflow: hidden;
+
+    .close {
+        font-size: 20px;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        border: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition-150);
+
+        i {
+            font-size: 18px;
+            color: var(--color-gray);
+            -webkit-text-stroke: 0.2px var(--color-gray);
+            transition: var(--transition-150);
+        }
+
+        &:hover {
+            i {
+                -webkit-text-stroke: 0.2px var(--color-red);
+                color: var(--color-red);
+            }
+        }
+    }
+}
+
+.newsletter-left {
+    width: 300px;
+    min-width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.newsletter-right {
+    padding: 35px 40px;
+
+    .title {
+        font-weight: var(--font-medium);
+        margin-bottom: 11px;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .sub-title {
+        font-size: 16px;
+        font-weight: var(--font-normal);
+        margin-bottom: 30px;
+        color: var(--color-gray);
+        line-height: 21px;
+    }
+
+    .newsletter-form {
+        margin-bottom: 26px;
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+
+            svg {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                path {
+                    stroke: var(--color-gray-dark-5);
+                    transition: var(--transition-150);
+                }
+            }
+
+            .form-control {
+                padding-left: 45px;
+
+                &:focus + svg path {
+                    stroke: var(--color-black);
+                }
+            }
+        }
+
+        .error-message {
+            font-size: 14px;
+            margin: -12px 0 8px;
+            text-align: left;
+        }
+    }
+
+    .btn-no-thanks {
+        font-size: 14px;
+        font-weight: var(--font-normal);
+        display: inline-flex;
+        align-self: center;
+        margin-top: 6px;
+        padding: 0 10px;
+        color: var(--color-gray);
+        text-decoration: none;
+        transition: var(--transition-150);
+
+        &:hover,
+        &:active,
+        &:visited {
+            color: var(--color-primary);
+        }
+    }
+
+    .btn-subscribe {
+        font-weight: var(--font-normal);
+
+        > i {
+            margin-right: 4px;
+        }
+    }
+
+    .info-text {
+        font-size: 13px;
+        font-weight: var(--font-normal);
+        color: var(--color-gray-dark);
+        line-height: 19px;
+
+        a {
+            color: var(--color-primary);
+
+            &:hover {
+                color: var(--color-primary-hover);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .newsletter-inner {
+        .close {
+            top: 10px;
+            right: 10px;
+            height: 25px;
+            width: 25px;
+
+            i {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .newsletter-wrap {
+        .modal-dialog {
+            width: 550px;
+        }
+    }
+
+    .newsletter-right {
+        width: 100%;
+        padding: 40px;
+        text-align: center;
+
+        .newsletter-form {
+            margin-bottom: 18px;
+        }
+
+        .title {
+            font-size: 28px;
+            line-height: 36px;
+        }
+
+        .sub-title {
+            font-size: 17px;
+            margin-bottom: 26px;
+        }
+    }
+
+    .newsletter-left {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .newsletter-wrap {
+        .modal-dialog {
+            width: calc(100% - 30px);
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .newsletter-right {
+        padding: 30px 25px 35px;
+
+        .newsletter-form {
+            .form-group {
+                flex-direction: column;
+            }
+        }
+
+        .btn-subscribe {
+            margin-left: 0;
+        }
+    }
+}

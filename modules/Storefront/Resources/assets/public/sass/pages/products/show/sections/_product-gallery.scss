@@ -1,0 +1,286 @@
+@import "swiper/scss/thumbs";
+
+.product-gallery {
+    width: 550px;
+    min-width: 550px;
+    padding-right: 15px;
+    top: 90px;
+    position: sticky !important;
+    z-index: 1;
+}
+
+.product-gallery-preview-wrap {
+    margin-bottom: 12px;
+    border: 1px solid var(--color-gray-lite);
+    border-radius: var(--radius-default);
+
+    &.visible-variation-image {
+        .product-gallery-preview {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .variation-image {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        max-height: 100%;
+        max-width: 100%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+}
+
+.product-gallery-preview {
+    transition: var(--transition-150);
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        left: 15px;
+        transition: var(--transition-150);
+        height: 30px;
+        width: 30px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        top: 50%;
+        bottom: 0;
+        transform: translateY(-50%);
+        margin: 0;
+
+        &::after {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--color-white);
+            padding-right: 2px;
+        }
+    }
+
+    .swiper-button-next {
+        left: unset;
+        right: 15px;
+
+        &::after {
+            padding-right: unset;
+            padding-left: 2px;
+        }
+    }
+
+    .gallery-preview-slide {
+        position: relative;
+    }
+
+    .gallery-preview-item {
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding-bottom: 100%;
+        background: var(--color-white);
+        transition: none;
+        cursor: crosshair;
+
+        > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-height: 100%;
+            max-width: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image-placeholder {
+            width: 130px;
+        }
+    }
+
+    .gallery-view-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        height: 30px;
+        width: 30px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-white);
+        background: var(--color-primary);
+        border-radius: var(--radius-full);
+        z-index: 1;
+        transform: rotateY(180deg);
+        transition: none;
+        cursor: pointer;
+
+        > i {
+            font-size: 16px;
+            transition: none;
+        }
+    }
+}
+
+.product-gallery-thumbnail {
+    &:not(.swiper-initialized) {
+        margin-right: -5px;
+        margin-left: -5px;
+
+        .swiper-slide {
+            max-width: calc(14.285% - 10px);
+            margin-right: 5px !important;
+            margin-left: 5px;
+        }
+    }
+
+    .swiper-slide {
+        margin-right: 0;
+        height: 100%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        left: 10px;
+        transition: var(--transition-150);
+        height: 22px;
+        width: 22px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        top: 50%;
+        bottom: 0;
+        transform: translateY(-50%);
+        margin: 0;
+
+        &::after {
+            font-size: 8px;
+            font-weight: 500;
+            color: var(--color-white);
+            padding-right: 2px;
+        }
+    }
+
+    .swiper-button-next {
+        left: unset;
+        right: 10px;
+
+        &::after {
+            padding-right: unset;
+            padding-left: 2px;
+        }
+    }
+
+    .swiper-slide-active {
+        &:only-child {
+            .gallery-thumbnail-item {
+                border-color: var(--color-primary);
+            }
+        }
+    }
+
+    .swiper-slide-thumb-active {
+        .gallery-thumbnail-item {
+            border-color: var(--color-primary);
+        }
+    }
+
+    .gallery-thumbnail-item {
+        position: relative;
+        padding-bottom: 100%;
+        border: 1px solid var(--color-gray-lite);
+        border-radius: var(--radius-default);
+        overflow: hidden;
+        transition: var(--transition-150);
+        cursor: pointer;
+
+        &.active {
+            border-color: var(--color-primary);
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-height: 100%;
+            max-width: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image-placeholder {
+            max-height: 60%;
+            max-width: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .product-gallery-thumbnail:not(.swiper-initialized) {
+        .swiper-slide {
+            max-width: calc(16.66% - 10px);
+        }
+    }
+
+    .product-gallery {
+        width: 500px;
+        min-width: 500px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .product-gallery {
+        width: 430px;
+        min-width: 430px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .product-gallery-thumbnail:not(.swiper-initialized) {
+        .swiper-slide {
+            max-width: calc(14.285% - 10px);
+        }
+    }
+
+    .product-gallery {
+        width: 578px;
+        min-width: 578px;
+        padding-right: 15px;
+        position: unset !important;
+        z-index: unset;
+    }
+
+    .product-gallery-preview {
+        .gallery-view-icon {
+            display: flex;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product-gallery {
+        width: 100%;
+        min-width: 100%;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .product-gallery-thumbnail:not(.swiper-initialized) {
+        .swiper-slide {
+            max-width: calc(16.66% - 10px);
+        }
+    }
+
+    .product-gallery-preview-wrap {
+        border: unset;
+    }
+
+    .product-gallery-preview {
+        .gallery-view-icon {
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .product-gallery-thumbnail:not(.swiper-initialized) {
+        .swiper-slide {
+            max-width: calc(25% - 10px);
+        }
+    }
+}

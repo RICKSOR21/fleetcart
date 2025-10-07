@@ -1,0 +1,17 @@
+@import "layouts/_error-page-left";
+@import "layouts/_error-page-right";
+
+.error-page-wrap {
+    margin-top: 70px;
+    padding-bottom: 20px;
+}
+
+.error-page {
+    justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+    .error-page {
+        flex-direction: column-reverse;
+    }
+}

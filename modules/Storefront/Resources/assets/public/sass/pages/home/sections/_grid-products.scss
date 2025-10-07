@@ -1,0 +1,290 @@
+@import "swiper/scss/grid";
+
+.grid-products-wrap {
+    margin-top: 30px;
+
+    .grid-products-wrap-inner {
+        overflow: hidden;
+        padding: 0 10px 40px 10px;
+        margin: 0 -10px -40px -10px;
+
+        .swiper-button-next,
+            .swiper-button-prev {
+                &::after {
+                    transform: translateY(-1px);
+                }
+        }
+    }
+
+    .tabs {
+        display: flex;
+        padding-left: 0;
+
+        .tab-item {
+            font-size: 15px;
+            line-height: 26px;
+            padding: 15px 3px;
+            color: var(--color-gray);
+            font-weight: var(--font-normal);
+
+            &.active {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .tab-products-header {
+        position: relative;
+
+        hr {
+            display: none;
+        }
+    }
+}
+
+.grid-products {
+    margin-left: -6px;
+    margin-right: -6px;
+    overflow: unset;
+    padding-bottom: 15px;
+    padding-top: 14px !important;
+
+    .swiper-pagination {
+        padding-top: 10px;
+    }
+
+    &.swiper-grid-column {
+        > .swiper-wrapper {
+            flex-direction: row;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: -50px;
+    }
+
+    .arrow-prev {
+        right: 69px;
+    }
+
+    .arrow-next {
+        right: -3px;
+    }
+
+    .swiper-slide {
+        height: auto !important;
+    }
+
+    .grid-products-item {
+        padding: 6px;
+        height: 100%;
+
+        .product-card {
+            margin: 0;
+            height: 100%;
+            justify-content: stretch;
+        }
+    }
+
+    .swiper-slide-skeleton {
+        padding: 6px;
+    }
+
+    .product-card-skeleton {
+        margin: 0;
+    }
+    
+    &.swiper:not(.swiper-initialized) {
+        .swiper-wrapper {
+            flex-wrap: wrap;
+
+            .swiper-slide {
+                &:nth-child(16) ~ .swiper-slide {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    .grid-products {
+        &.swiper:not(.swiper-initialized) {
+            .swiper-wrapper {
+                flex-wrap: wrap;
+    
+                .swiper-slide {
+                    &:nth-child(14) ~ .swiper-slide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .grid-products {
+        &.swiper:not(.swiper-initialized) {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:nth-child(12) ~ .swiper-slide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .grid-products {
+        &.swiper:not(.swiper-initialized) {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:nth-child(10) ~ .swiper-slide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .grid-products {
+        &.swiper:not(.swiper-initialized) {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:nth-child(8) ~ .swiper-slide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .grid-products {
+        &.swiper:not(.swiper-initialized) {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:nth-child(6) ~ .swiper-slide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .grid-products {
+        &.swiper:not(.swiper-initialized) {
+            .swiper-wrapper {
+                .swiper-slide {
+                    &:nth-child(4) ~ .swiper-slide {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .grid-products {
+        .grid-products-item {
+            padding: 6px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .grid-products {
+        padding-bottom: 25px;
+        padding-top: 4px !important;
+
+        .swiper-pagination {
+            display: block;
+            top: unset;
+            bottom: 0;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
+    }
+
+    .grid-products-wrap {
+        margin-bottom: 0;
+
+        .tabs {
+            display: flex;
+            text-align: center;
+
+            .tab-item {
+                display: inline-block;
+
+                &.active {
+                    &::after {
+                        opacity: 1 !important;
+                    }
+                }
+
+                &::after {
+                    bottom: -8px;
+                }
+
+                &::before {
+                    bottom: -1px;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .tab-products-header {
+            overflow: auto;
+            padding-bottom: 10px;
+            border-bottom: unset;
+            display: flex;
+
+            .tabs {
+                display: flex !important;
+                border-bottom: 1px solid #e5e5e5;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            hr {
+                display: block;
+                height: 0;
+                background: transparent;
+                position: absolute;
+                width: 100%;
+                top: 40px;
+                left: 0;
+                border: unset;
+                border-bottom: 1px solid #e5e5e5;
+                opacity: 1;
+            }
+
+            &::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+            }
+
+            &::-webkit-scrollbar-track,
+            &::-webkit-scrollbar-thumb,
+            &::-webkit-scrollbar-thumb:hover {
+                background: transparent;
+            }
+        }
+    }
+}

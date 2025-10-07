@@ -1,0 +1,87 @@
+.btn {
+    --bs-btn-font-size: 14px;
+    --bs-btn-font-weight: #{$font-medium};
+    --bs-btn-line-height: 20px;
+    --bs-btn-padding-x: 16px;
+    --bs-btn-padding-y: 6px;
+    --bs-btn-border-radius: #{$radius-default};
+    --bs-btn-box-shadow: none;
+    --bs-btn-focus-box-shadow: none;
+    --bs-btn-disabled-opacity: 0.6;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    --bs-btn-color: #{$color-white};
+    --bs-btn-hover-color: #{$color-white};
+    --bs-btn-active-color: #{$color-white};
+    --bs-btn-bg: #{$color-primary-500};
+    --bs-btn-hover-bg: #{$color-primary-600};
+    --bs-btn-active-bg: #{$color-primary-600};
+    --bs-btn-border-color: #{$color-primary-500};
+    --bs-btn-hover-border-color: #{$color-primary-600};
+    --bs-btn-active-border-color: #{$color-primary-600};
+    --bs-btn-disabled-bg: #{$color-primary-600};
+    --bs-btn-disabled-border-color: #{$color-primary-600};
+}
+
+.btn-light {
+    --bs-btn-color: #{$color-gray-500};
+    --bs-btn-hover-color: #{$color-primary-600};
+    --bs-btn-active-color: #{$color-primary-600};
+    --bs-btn-bg: #{$color-white};
+    --bs-btn-hover-bg: #{$color-white};
+    --bs-btn-active-bg: #{$color-white};
+    --bs-btn-border-color: #{$color-gray-300};
+    --bs-btn-hover-border-color: #{$color-primary-500};
+    --bs-btn-active-border-color: #{$color-primary-500};
+    --bs-btn-disabled-color: #{$color-gray-500};
+    --bs-btn-disabled-bg: #{$color-gray-100};
+    --bs-btn-disabled-border-color: #{$color-gray-100};
+}
+
+.btn-close {
+    --bs-btn-close-color: #{$color-slate-900};
+    transition: $transition-default;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.btn-loading {
+    color: transparent !important;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        background-image: conic-gradient(transparent 5deg, #fff 360deg);
+        mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - 1.25px),
+            #fff 0
+        );
+        animation: loader-spin 0.5s linear infinite;
+    }
+}
+
+/*rtl:begin:ignore*/
+@keyframes loader-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+/*rtl:end:ignore*/

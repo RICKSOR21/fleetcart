@@ -1,0 +1,42 @@
+.searched-keywords {
+    display: flex;
+    width: 95%;
+    margin: 4px auto -5px;
+    justify-content: center;
+
+    > label {
+        font-size: 13px;
+        margin-bottom: 0;
+        color: var(--color-primary);
+        white-space: nowrap;
+    }
+}
+
+.searched-keywords-list {
+    margin: -2px 0 0 10px;
+
+    li {
+        font-size: 13px;
+        position: relative;
+        display: inline-block;
+        margin-left: 4px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        a {
+            color: var(--color-gray);
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .searched-keywords {
+        display: none;
+    }
+}

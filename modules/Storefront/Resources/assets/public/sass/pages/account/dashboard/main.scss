@@ -1,0 +1,22 @@
+.account-right {
+    .user-info {
+        padding: 20px 25px !important;
+
+        li {
+            display: flex;
+            line-height: 24px;
+            padding: 11px 0;
+            color: var(--color-gray);
+
+            > i {
+                font-size: 24px;
+                margin-right: 8px;
+                vertical-align: top;
+            }
+
+            > span {
+                word-break: break-all;
+            }
+        }
+    }
+}

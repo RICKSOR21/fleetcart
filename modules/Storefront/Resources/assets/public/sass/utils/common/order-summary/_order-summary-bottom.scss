@@ -1,0 +1,46 @@
+.order-summary-bottom {
+    text-align: center;
+
+    .checkout-terms-and-conditions {
+        margin: -1px 0 0;
+        padding-bottom: 10px;
+        text-align: center;
+
+        .error-message {
+            margin: -2px 0 8px;
+        }
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .btn-proceed-to-checkout {
+        display: block;
+        margin: auto;
+
+        &.skeleton {
+            height: 40px;
+            background: var(--color-gray-lite);
+            border-radius: var(--radius-default);
+        }
+    }
+}
+
+#paypal-button-container {
+    .paypal-buttons {
+        vertical-align: top;
+
+        iframe.component-frame {
+            z-index: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 991px) {
+    .order-summary-bottom {
+        .btn {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+.top-nav-wrap {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.top-nav {
+    padding: 8px 0px;
+
+    .top-nav-left {
+        padding-right: 20px;
+
+        > span {
+            display: block;
+        }
+    }
+
+    .top-nav-right-list {
+        display: flex;
+
+        .custom-dropdown {
+            display: flex;
+            align-items: center;
+            border-right: 1px solid var(--border-color-lite);
+
+            &.active {
+                z-index: 13;
+            }
+
+            .dropdown-toggle {
+                padding: 0 20px;
+                border: none;
+
+                i {
+                    &:first-child {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                top: 40px;
+
+                &::after {
+                    right: 18px;
+                }
+
+                &::before {
+                    right: 15px;
+                }
+            }
+        }
+
+        > li:not(.dropdown) {
+            border-left: 1px solid var(--border-color-lite);
+            display: inline-block;
+            padding: 0 20px;
+
+            &:first-child {
+                padding-left: 0;
+                border-right: 1px solid var(--border-color-lite);
+            }
+
+            &:last-child {
+                padding-right: 0;
+                border-left: unset;
+            }
+
+            &:first-child {
+                border-left: none;
+            }
+
+            &.top-nav-compare {
+                display: none;
+            }
+
+            > a {
+                display: flex;
+                align-items: center;
+                color: var(--color-black);
+                white-space: nowrap;
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+
+                > i {
+                    margin-right: 5px;
+
+                    color: var(--color-primary);
+                }
+
+                > svg {
+                    margin-right: 5px;
+                    width: 13px;
+                    height: 13px;
+                    margin-top: -2px;
+
+                    path {
+                        stroke: var(--color-primary);
+                    }
+                }
+            }
+
+            > i {
+                margin-right: 5px;
+
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .top-nav-wrap {
+        display: none;
+    }
+
+    .top-nav {
+        > .row {
+            flex-direction: column;
+        }
+
+        .top-nav-left {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .top-nav-right-list {
+            .top-nav-account {
+                display: none;
+            }
+
+            .top-nav-currency {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-nav {
+        .top-nav-right-list {
+            > li {
+                &.top-nav-compare {
+                    display: block;
+                }
+            }
+        }
+    }
+}

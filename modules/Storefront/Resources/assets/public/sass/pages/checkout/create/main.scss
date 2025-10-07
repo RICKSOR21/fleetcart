@@ -1,0 +1,117 @@
+@import "../../../utils/common/_steps";
+@import "../../../utils/common/_order-summary";
+@import "layouts/_checkout-left";
+@import "layouts/_checkout-right";
+
+.checkout-wrap {
+    margin-top: 50px;
+}
+
+.checkout-form {
+    display: flex;
+    position: relative;
+    width: 1300px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+
+    .checkout-inner {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .order-summary {
+        .cart-items {
+            margin: 0 0 17px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 3px;
+            }
+        }
+    }
+
+    .order-summary-list {
+        &.order-summary-list-skeleton {
+            margin-top: 5px;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+
+        label,
+        span {
+            &.skeleton {
+                height: 18px;
+                background: var(--color-gray-lite);
+                border-radius: 6px;
+            }
+        }
+
+        label {
+            &.skeleton {
+                width: 70px;
+            }
+        }
+
+        span {
+            &.skeleton {
+                width: 80px;
+            }
+        }
+    }
+
+    .order-summary-total {
+        font-size: 18px;
+        font-weight: var(--font-medium);
+        display: flex;
+        margin-top: 20px;
+        padding-bottom: 0;
+        justify-content: space-between;
+        padding: 10px 0 0 0;
+        border-top: 1px solid var(--color-gray-lite);
+
+        &.order-summary-total-skeleton {
+            label,
+            span {
+                height: 24px;
+                background: var(--color-gray-lite);
+                border-radius: 6px;
+            }
+
+            label {
+                width: 80px;
+            }
+
+            span {
+                width: 90px;
+            }
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .checkout-form {
+        .checkout-inner {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .checkout-wrap {
+        margin-top: 30px;
+    }
+
+    .checkout-form {
+        flex-direction: column;
+        align-items: unset;
+    }
+}

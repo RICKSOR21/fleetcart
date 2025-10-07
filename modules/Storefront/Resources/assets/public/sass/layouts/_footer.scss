@@ -1,0 +1,12 @@
+@import "footer/_footer-top";
+@import "footer/_footer-bottom";
+
+.footer {
+    padding-top: 50px;
+}
+
+@media screen and (max-width: 991px) {
+    .footer {
+        padding-bottom: 62px;
+    }
+}

@@ -1,0 +1,16 @@
+/*rtl:begin:ignore*/
+@import "flatpickr/dist/flatpickr";
+@import "glightbox/dist/css/glightbox";
+/*rtl:end:ignore*/
+@import "../../../vendors/drift-zoom";
+@import "../../../utils/common/_custom-page-content";
+@import "sections/_product-details-top";
+@import "sections/_product-gallery";
+@import "sections/_product-details-info";
+@import "sections/_product-details-bottom";
+@import "sections/_product-specification";
+@import "sections/_product-reviews";
+
+.product-details-wrap {
+    margin-top: 50px;
+}

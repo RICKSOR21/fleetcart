@@ -1,0 +1,25 @@
+@import "sections/_home-section";
+@import "sections/_features";
+@import "sections/_featured-categories";
+@import "sections/_banner";
+@import "sections/_landscape-tab-products";
+@import "sections/_grid-products";
+@import "sections/_brands";
+@import "sections/_blogs";
+
+.tab-content {
+    .swiper {
+        padding-bottom: 50px;
+        margin-bottom: -50px;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .tab-content {
+        .swiper {
+            padding-top: 10px;
+        }
+    }
+}
+

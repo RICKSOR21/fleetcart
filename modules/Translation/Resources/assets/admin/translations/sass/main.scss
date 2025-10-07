@@ -1,0 +1,12 @@
+.translations {
+    .form-elements {
+        display: flex;
+
+        .form-group {
+            &:first-child {
+                flex-grow: 1;
+                margin-right: 15px;
+            }
+        }
+    }
+}
